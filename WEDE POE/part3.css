@@ -1,0 +1,57 @@
+/* part3.css: extra styles for Part 3. Load it AFTER style.css */
+
+[hidden] { display: none !important; }
+
+/* Accessibility: skip link */
+.skip-link { position: absolute; left: -999px; top: 0; background: #000; color: #fff; padding: .6rem 1rem; z-index: 1000; }
+.skip-link:focus { left: 0; }
+
+/* Animations */
+.reveal { opacity: 0; transform: translateY(30px); transition: opacity .8s ease, transform .8s ease; }
+.reveal.visible { opacity: 1; transform: none; }
+.service-card, .team-card, .about-card { transition: transform .25s ease, box-shadow .25s ease; }
+.service-card:hover, .team-card:hover, .about-card:hover { transform: translateY(-6px); box-shadow: 0 10px 24px rgba(0, 0, 0, .12); }
+.team-card h3 { font-size: 1.1rem; margin: .5rem 0 .25rem; }
+@media (prefers-reduced-motion: reduce) {
+    .reveal { opacity: 1; transform: none; transition: none; }
+    .service-card, .team-card, .about-card { transition: none; }
+}
+
+/* Services search / filter / sort */
+.services-toolbar { display: flex; flex-wrap: wrap; gap: 1rem; align-items: flex-end; margin: 1.5rem 0 1rem; }
+.services-toolbar .tool { display: flex; flex-direction: column; gap: .3rem; flex: 1 1 200px; }
+.services-toolbar label { font-weight: 600; }
+.services-toolbar input, .services-toolbar select { padding: .65rem .8rem; border: 1px solid #bbb; border-radius: 8px; font: inherit; }
+.results-count { margin: 0 0 1rem; font-weight: 600; }
+.service-tag { display: inline-block; margin-top: .6rem; padding: .2rem .7rem; border-radius: 999px; background: #eef2ff; font-size: .8rem; font-weight: 600; }
+.no-results { text-align: center; padding: 2rem 1rem; }
+
+/* Forms */
+.optional { font-weight: 400; color: #666; font-size: .85em; }
+.error-msg { color: #b3261e; font-size: .85rem; margin: .35rem 0 0; }
+.form-group input.invalid, .form-group select.invalid, .form-group textarea.invalid { border-color: #b3261e; }
+.form-group input.valid, .form-group select.valid, .form-group textarea.valid { border-color: #1e8449; }
+.char-count { font-size: .8rem; text-align: right; margin: .25rem 0 0; color: #555; }
+.conditional-fields { margin: 0; }
+
+/* Result cards (enquiry reply + email draft) */
+.response-card { margin-top: 1.5rem; padding: 1.5rem; border: 1px solid #cfe8d5; border-radius: 14px; background: #f6fbf7; }
+.response-card:focus { outline: 2px solid #1e8449; }
+.response-card dl { display: grid; grid-template-columns: max-content 1fr; gap: .4rem 1.2rem; margin: 1rem 0; }
+.response-card dt { font-weight: 700; }
+.response-card dd { margin: 0; }
+.form-status { padding: .8rem 1rem; border-radius: 10px; margin: 1rem 0; }
+.form-status.success { background: #e8f5ec; border: 1px solid #b7dfc3; }
+.form-status.warning { background: #fff6e0; border: 1px solid #f0d58a; }
+.email-preview { white-space: pre-wrap; word-wrap: break-word; background: #fff; border: 1px dashed #aaa; border-radius: 10px; padding: 1rem; font: inherit; }
+.btn-row { display: flex; flex-wrap: wrap; gap: .75rem; margin-top: 1rem; }
+.btn-secondary { padding: .7rem 1.2rem; border: 2px solid currentColor; border-radius: 999px; background: transparent; color: inherit; font: inherit; font-weight: 600; cursor: pointer; }
+.btn-link { display: inline-block; text-decoration: none; text-align: center; }
+
+/* Google Map */
+.map-wrapper { margin: 1.5rem 0; border-radius: 12px; overflow: hidden; }
+.map-wrapper iframe { display: block; width: 100%; height: 320px; border: 0; }
+
+@media (max-width: 600px) {
+    .response-card dl { grid-template-columns: 1fr; }
+}

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact KiddiesTime | Day Care in Bloemfontein</title>
+    <meta name="description" content="Contact KiddiesTime Day Care Centre in Vista Park, Bloemfontein. Send us a message, call +27 83 318 0628 or find us on the map.">
+    <meta name="keywords" content="contact KiddiesTime, day care Bloemfontein, Vista Park, phone, location">
+    <meta name="author" content="KiddiesTime">
+    <meta name="robots" content="index, follow">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="KiddiesTime">
+    <meta property="og:locale" content="en_ZA">
+    <meta property="og:title" content="Contact KiddiesTime | Day Care in Bloemfontein">
+    <meta property="og:description" content="Contact KiddiesTime Day Care Centre in Vista Park, Bloemfontein. Send us a message, call +27 83 318 0628 or find us on the map.">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="part3.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <noscript><style>.reveal { opacity: 1; transform: none; }</style></noscript>
+    <script src="script.js" defer></script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "ChildCare",
+        "name": "KiddiesTime Day Care Centre",
+        "slogan": "Where little minds grow, play and shine every day.",
+        "description": "A day care centre where children are inspired to dream big, learn joyfully and grow into confident, caring leaders.",
+        "telephone": "+27833180628",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "27068 Vista Park",
+            "addressLocality": "Bloemfontein",
+            "addressRegion": "Free State",
+            "postalCode": "9301",
+            "addressCountry": "ZA"
+        }
+    }
+    </script>
+</head>
+<body>
+    <a class="skip-link" href="#main">Skip to main content</a>
+
+    <!-- Navigation -->
+    <header class="main-header">
+        <div class="container header-container">
+            <div class="logo">
+
+            </div>
+            <nav class="main-nav" aria-label="Main navigation">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="services.html">Services</a>
+                <a href="enquiry.html">Enquiry</a>
+                <a href="contact.html" class="active" aria-current="page">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <main id="main">
+        <!-- CONTACT SECTION -->
+        <section class="contact-section">
+            <div class="container">
+                <h2>Contact & Locations</h2>
+
+                <div class="location-card">
+                    <span class="location-icon" aria-hidden="true">📍</span>
+                    <h3>Bloemfontein</h3>
+                    <p>27068 Vista Park<br>9301<br><a href="tel:+27833180628">+27 83 318 0628</a></p>
+                </div>
+
+                <div class="map-wrapper">
+                    <iframe title="Map showing KiddiesTime in Vista Park, Bloemfontein" src="https://maps.google.com/maps?q=27068%20Vista%20Park%2C%20Bloemfontein&amp;output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+                </div>
+
+                <div class="form-container contact-form-container">
+                    <h3>Send us a message</h3>
+                    <!-- The action is a fallback for when JavaScript is off; script.js builds the email itself -->
+                    <form id="contact-form" name="contact" action="mailto:info@kiddiestime.co.za" method="post" enctype="text/plain" novalidate>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="contact-name">Name</label>
+                                <input type="text" id="contact-name" name="name" required minlength="2" maxlength="60" autocomplete="name" data-validate="name">
+                            </div>
+                            <div class="form-group">
+                                <label for="contact-email">Email</label>
+                                <input type="email" id="contact-email" name="email" required autocomplete="email" data-validate="email">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="contact-phone">Phone <span class="optional">(optional)</span></label>
+                                <input type="tel" id="contact-phone" name="phone" maxlength="16" pattern="[0-9+()\s\-]{9,16}" autocomplete="tel" data-validate="phone">
+                            </div>
+                            <div class="form-group">
+                                <label for="message-type">Type of message</label>
+                                <select id="message-type" name="message-type" required data-validate="select">
+                                    <option value="">Choose one…</option>
+                                    <option>General question</option>
+                                    <option>Booking or fees</option>
+                                    <option>Feedback or compliment</option>
+                                    <option>Complaint</option>
+                                    <option>Other</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <input type="text" id="subject" name="subject" placeholder="How can we help?" required minlength="3" maxlength="100" data-validate="subject">
+                        </div>
+                        <div class="form-group">
+                            <label for="contact-message">Message</label>
+                            <textarea id="contact-message" name="message" rows="4" placeholder="Your message..." required minlength="10" maxlength="500" data-validate="message"></textarea>
+                        </div>
+                        <button type="submit" class="btn-submit">Send Message</button>
+                    </form>
+
+                    <div id="email-draft" aria-live="polite" hidden></div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="main-footer">
+        <div class="container">
+            <p>KiddiesTime — Where little minds grow, play and shine every day.</p>
+            <p class="copyright">&copy; <span id="year">2026</span> · All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>

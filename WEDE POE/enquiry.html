@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enquire Now | Enrol, Volunteer or Sponsor | KiddiesTime</title>
+    <meta name="description" content="Enquire about enrolling your child, volunteering or sponsoring KiddiesTime. Get fees and availability instantly and a reply within 24 hours.">
+    <meta name="keywords" content="day care enquiry, enrol child, volunteer, sponsor, day care fees, KiddiesTime">
+    <meta name="author" content="KiddiesTime">
+    <meta name="robots" content="index, follow">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="KiddiesTime">
+    <meta property="og:locale" content="en_ZA">
+    <meta property="og:title" content="Enquire Now | Enrol, Volunteer or Sponsor | KiddiesTime">
+    <meta property="og:description" content="Enquire about enrolling your child, volunteering or sponsoring KiddiesTime. Get fees and availability instantly and a reply within 24 hours.">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="part3.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <noscript><style>.reveal { opacity: 1; transform: none; }</style></noscript>
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <a class="skip-link" href="#main">Skip to main content</a>
+
+    <!-- Navigation -->
+    <header class="main-header">
+        <div class="container header-container">
+            <div class="logo">
+
+            </div>
+            <nav class="main-nav" aria-label="Main navigation">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="services.html">Services</a>
+                <a href="enquiry.html" class="active" aria-current="page">Enquiry</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <main id="main">
+        <!-- ENQUIRY SECTION -->
+        <section class="enquiry-section">
+            <div class="container">
+                <h2>Enquiry Form</h2>
+                <div class="form-container">
+                    <p>At KiddiesTime, we welcome all parents and their children. Fill in this form and we will get back to you within 24 hours.</p>
+                    <hr class="divider-light">
+
+                    <form id="enquiry-form" name="enquiry" action="/" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" novalidate>
+                        <input type="hidden" name="form-name" value="enquiry">
+                        <p hidden><label>Leave this empty: <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="fullname">Full Name</label>
+                                <input type="text" id="fullname" name="fullname" placeholder="e.g Lesedi Sebiloane" required minlength="2" maxlength="60" autocomplete="name" data-validate="name">
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="email" id="email" name="email" placeholder="sebiloanesedi@gmail.com" required autocomplete="email" data-validate="email">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="phone">Phone <span class="optional">(optional)</span></label>
+                                <input type="tel" id="phone" name="phone" placeholder="+27 83 380 3828" maxlength="16" pattern="[0-9+()\s\-]{9,16}" autocomplete="tel" data-validate="phone">
+                            </div>
+                            <div class="form-group">
+                                <label for="enquiry-type">Enquiry Type</label>
+                                <select id="enquiry-type" name="enquiry-type" required data-validate="select">
+                                    <option value="">Choose one…</option>
+                                    <option value="enrol">Enrol my child</option>
+                                    <option value="volunteer">Volunteer opportunity</option>
+                                    <option value="sponsor">Become a sponsor</option>
+                                    <option value="general">General enquiry</option>
+                                    <option value="partnership">Partnership</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <!-- Shown only when "Enrol my child" is chosen -->
+                        <div class="conditional-fields" id="enrol-fields" role="group" aria-label="Enrolment details" hidden>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="child-age">Child's age group</label>
+                                    <select id="child-age" name="child-age" required data-validate="select">
+                                        <option value="">Choose age group…</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="start-date">Preferred start date</label>
+                                    <input type="date" id="start-date" name="start-date" required data-validate="date">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Shown only when "Become a sponsor" is chosen -->
+                        <div class="conditional-fields" id="sponsor-fields" role="group" aria-label="Sponsorship details" hidden>
+                            <div class="form-group">
+                                <label for="sponsor-level">Sponsorship level</label>
+                                <select id="sponsor-level" name="sponsor-level" required data-validate="select">
+                                    <option value="">Choose a level…</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" rows="5" required minlength="10" maxlength="500" placeholder="Tell us how you'd like to contribute..." data-validate="message"></textarea>
+                        </div>
+                        <button type="submit" class="btn-submit">📤 Send Enquiry</button>
+                    </form>
+
+                    <div id="enquiry-response" aria-live="polite"></div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="main-footer">
+        <div class="container">
+            <p>KiddiesTime — Where little minds grow, play and shine every day.</p>
+            <p class="copyright">&copy; <span id="year">2026</span> · All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>

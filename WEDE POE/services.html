@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Services | Early Education & Daily Care | KiddiesTime</title>
+    <meta name="description" content="Explore KiddiesTime's services: early education, social growth, daily care, healthy meals and physical play. Search and filter to find what suits your child.">
+    <meta name="keywords" content="day care services, early education, daily care, healthy meals, physical play, social growth">
+    <meta name="author" content="KiddiesTime">
+    <meta name="robots" content="index, follow">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="KiddiesTime">
+    <meta property="og:locale" content="en_ZA">
+    <meta property="og:title" content="Our Services | Early Education & Daily Care | KiddiesTime">
+    <meta property="og:description" content="Explore KiddiesTime's services: early education, social growth, daily care, healthy meals and physical play. Search and filter to find what suits your child.">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="part3.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <noscript><style>.reveal { opacity: 1; transform: none; }</style></noscript>
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <a class="skip-link" href="#main">Skip to main content</a>
+
+    <!-- Navigation -->
+    <header class="main-header">
+        <div class="container header-container">
+            <div class="logo">
+
+            </div>
+            <nav class="main-nav" aria-label="Main navigation">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="services.html" class="active" aria-current="page">Services</a>
+                <a href="enquiry.html">Enquiry</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <main id="main">
+        <!-- SERVICES SECTION -->
+        <section class="services-section">
+            <div class="container">
+                <h2>Our Services</h2>
+                <p>Search, filter or sort to find what suits your child, then <a href="enquiry.html">send us an enquiry</a>.</p>
+
+                <div class="services-toolbar" role="search" aria-label="Search and filter services">
+                    <div class="tool">
+                        <label for="service-search">Search services</label>
+                        <input type="search" id="service-search" placeholder="e.g. meals, play, care" autocomplete="off">
+                    </div>
+                    <div class="tool">
+                        <label for="service-category">Category</label>
+                        <select id="service-category">
+                            <option value="all">All categories</option>
+                        </select>
+                    </div>
+                    <div class="tool">
+                        <label for="service-sort">Sort by</label>
+                        <select id="service-sort">
+                            <option value="default">Default order</option>
+                            <option value="az">Name A to Z</option>
+                            <option value="za">Name Z to A</option>
+                            <option value="category">Category</option>
+                        </select>
+                    </div>
+                    <button type="button" id="reset-filters" class="btn-secondary">Reset</button>
+                </div>
+
+                <p id="results-count" class="results-count" aria-live="polite"></p>
+
+                <!-- These cards are the fallback if JavaScript is off; script.js re-draws them from its data -->
+                <div class="services-grid" id="services-grid">
+                    <div class="service-card">
+                        <h3>Early Education</h3>
+                        <p>Teaching letters, numbers, and colours through fun games. A premium early learning school that utilizes structured developmental stages to foster cognitive, emotional, and social development. Their curriculum emphasizes school readiness and confidence building under the motto of building future leaders with love, play, and purpose.</p>
+                    </div>
+                    <div class="service-card">
+                        <h3>Social Growth</h3>
+                        <p>Helping children share, make friends and listen to their elders. At KiddiesTime, we believe that the earliest friendships shape the brightest futures. Our dedicated space is designed to help your child build essential social skills, emotional confidence, and lasting connections through structured play and guided group activities.</p>
+                    </div>
+                    <div class="service-card">
+                        <h3>Daily Care</h3>
+                        <p>Providing a safe place for kids while parents work. At KiddiesTime, every day is a new opportunity for your child to grow, laugh, and discover. We provide a safe, nurturing, and joyful environment where early learning feels like play.</p>
+                    </div>
+                    <div class="service-card">
+                        <h3>Healthy Meals</h3>
+                        <p>Serving nutritious snacks and lunches during the day. We believe that healthy food drives happy learning. Every day, our in-house chef prepares fresh, balanced meals that kids love and parents trust.</p>
+                    </div>
+                    <div class="service-card">
+                        <h3>Physical Play</h3>
+                        <p>Running, climbing, and building motor skills outside. Active Bodies, Bright Minds! 🏃‍♂️✨ At our daycare, we believe that moving is learning. Physical play isn't just about burning energy—it is how children explore, build confidence, and grow strong.</p>
+                    </div>
+                </div>
+
+                <p id="no-results" class="no-results" hidden>No services match your search. Try a different word or press Reset.</p>
+                 
+                                <!-- LEARNING CHARTS SECTION -->
+                <div class="learning-resources reveal" style="margin-top: 4rem;">
+                    <h3 style="text-align: center; font-size: 1.8rem; color: #333;">Our Learning Charts</h3>
+                    <p style="text-align: center; margin-bottom: 2rem;">We use fun, colorful visual aids to help our little ones learn their ABCs, 123s, and more!</p>
+                    
+                    <div class="charts-grid">
+                        <!-- Chart 1 -->
+                        <figure class="chart-card">
+                            <a href="images/charts/alphabet-chart.jpg" target="_blank" class="chart-link">
+                                <img src="images/charts/alphabet-chart.jpg" alt="Alphabet chart with A for Apple, B for Ball" loading="lazy">
+                            </a>
+                            <figcaption>Alphabet & Phonics</figcaption>
+                        </figure>
+
+                        <!-- Chart 2 -->
+                        <figure class="chart-card">
+                            <a href="images/charts/educational-charts.jpg" target="_blank" class="chart-link">
+                                <img src="images/charts/educational-charts.jpg" alt="Poster showing various educational charts" loading="lazy">
+                            </a>
+                            <figcaption>Colors, Shapes & Days</figcaption>
+                        </figure>
+
+                        <!-- Chart 3 -->
+                        <figure class="chart-card">
+                            <a href="images/charts/counting-chart.jpg" target="_blank" class="chart-link">
+                                <img src="images/charts/counting-chart.jpg" alt="Counting chart from 1 to 10 with animals" loading="lazy">
+                            </a>
+                            <figcaption>Numbers & Counting</figcaption>
+                        </figure>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="main-footer">
+        <div class="container">
+            <p>KiddiesTime — Where little minds grow, play and shine every day.</p>
+            <p class="copyright">&copy; <span id="year">2026</span> · All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,590 @@
+/* =========================================
+   1. CSS RESET (Base Style)
+   ========================================= */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 16px; /* Base for rem units */
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Quicksand', 'Segoe UI', sans-serif;
+    /* Soft off-white to match the shirt base */
+    background-color: #fcfcfc; 
+    color: #333333;
+    line-height: 1.6;
+}
+
+img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%;
+}
+
+/* =========================================
+   2. TYPOGRAPHY SCALE & VARIABLES
+   (Extracted from the KiddiesTime Shirt)
+   ========================================= */
+:root {
+    /* Primary Blue from the collar and paint splatters */
+    --primary-color: #2B9FD9; 
+    /* Magenta/Pink from the "TIME" text and splatters */
+    --accent-pink: #D91A7A;
+    /* Yellow from the "KIDDIES" text and splatters */
+    --accent-yellow: #F4C430;
+    /* Green from the clock and background */
+    --accent-green: #2E8B57;
+    
+    --text-color: #333333;
+    --light-bg: #ffffff;
+    --section-bg: #f4f9fc; /* Very light blue tint */
+    --border-radius: 1.5rem;
+    --shadow: 0 8px 20px rgba(43, 159, 217, 0.1); /* Blue-tinted shadow */
+    --transition: all 0.3s ease;
+}
+
+h1, h2, h3, h4 {
+    color: var(--primary-color);
+    line-height: 1.2;
+    font-weight: 700;
+}
+
+h1 { font-size: 2.5rem; margin-bottom: 1rem; }
+h2 { 
+    font-size: 2rem; 
+    margin-bottom: 1.5rem; 
+    /* Using the green from the clock for the accent line */
+    border-left: 0.4rem solid var(--accent-green); 
+    padding-left: 1rem; 
+}
+h3 { font-size: 1.5rem; margin-bottom: 0.8rem; }
+h4 { font-size: 1.25rem; margin-bottom: 0.5rem; }
+
+p { margin-bottom: 1rem; color: #555555; }
+
+a {
+    text-decoration: none;
+    color: var(--primary-color);
+    font-weight: 600;
+    transition: var(--transition);
+}
+
+a:hover {
+    color: var(--accent-pink);
+}
+
+/* =========================================
+   3. LAYOUT STRUCTURE (Flexbox & Grid)
+   ========================================= */
+.container {
+    width: 90%;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+/* Header Layout */
+.main-header {
+    background: var(--light-bg);
+    padding: 1rem 0;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    border-bottom: 4px solid var(--primary-color); /* Blue bottom border */
+}
+
+.header-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.logo h1 {
+    font-size: 2rem;
+    margin: 0;
+    color: var(--primary-color);
+}
+
+.main-nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+.main-nav a {
+    font-size: 1.1rem;
+    position: relative;
+    color: #444;
+}
+
+.main-nav a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 3px;
+    bottom: -4px;
+    left: 0;
+    background-color: var(--accent-pink);
+    transition: width 0.3s;
+    border-radius: 2px;
+}
+
+.main-nav a:hover::after {
+    width: 100%;
+}
+
+.main-nav a:hover {
+    color: var(--primary-color);
+}
+
+/* Hero Section */
+.hero-section {
+    /* Light blue background to match the collar */
+    background-color: #eaf6fc; 
+    padding: 4rem 0;
+    border-radius: var(--border-radius);
+    margin: 2rem auto;
+    width: 90%;
+    max-width: 1100px;
+    border: 1px solid rgba(43, 159, 217, 0.2);
+}
+
+.hero-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 2rem;
+}
+
+.hero-text h1 {
+    font-size: 2.8rem;
+    /* Using the pink from the shirt for the main heading */
+    color: var(--accent-pink); 
+}
+
+.hero-text p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+.hero-icon span {
+    font-size: 4rem;
+}
+
+.btn-primary {
+    display: inline-block;
+    /* Yellow button from the "KIDDIES" text */
+    background-color: var(--accent-yellow); 
+    color: #333;
+    padding: 0.8rem 2rem;
+    border-radius: 3rem;
+    font-weight: 700;
+    box-shadow: 0 4px 10px rgba(244, 196, 48, 0.4);
+    transition: var(--transition);
+}
+
+.btn-primary:hover {
+    background-color: #e0b020;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 15px rgba(244, 196, 48, 0.5);
+    color: #333;
+}
+
+/* Intro Section */
+.intro-section {
+    padding: 2rem 0;
+    text-align: center;
+}
+
+.intro-section p {
+    font-size: 1.15rem;
+    background: #ffffff;
+    padding: 1.5rem;
+    border-radius: var(--border-radius);
+    display: inline-block;
+    border-left: 5px solid var(--accent-yellow);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.02);
+}
+
+/* Divider */
+.divider {
+    border: 0;
+    height: 3px;
+    /* Gradient matching the shirt paint splatters: Blue -> Pink -> Yellow -> Green */
+    background: linear-gradient(90deg, transparent, var(--primary-color), var(--accent-pink), var(--accent-yellow), var(--accent-green), transparent);
+    margin: 3rem auto;
+    width: 80%;
+    opacity: 0.6;
+    border-radius: 3px;
+}
+
+.divider-light {
+    border: 0;
+    height: 1px;
+    background: #e0e0e0;
+    margin: 1.5rem 0;
+}
+
+/* About & Team Section */
+.about-section, .services-section, .enquiry-section, .contact-section {
+    padding: 2rem 0;
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+}
+
+.about-card {
+    background: var(--light-bg);
+    padding: 1.8rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    border-top: 4px solid var(--primary-color);
+}
+
+.about-card:nth-child(1) { border-top-color: var(--primary-color); }
+.about-card:nth-child(2) { border-top-color: var(--accent-pink); }
+.about-card:nth-child(3) { border-top-color: var(--accent-yellow); }
+
+.team-heading {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.team-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    justify-items: center;
+}
+
+.team-card {
+    background: var(--section-bg);
+    padding: 2.5rem 1.5rem;
+    border-radius: var(--border-radius);
+    text-align: center;
+    box-shadow: var(--shadow);
+    width: 100%;
+    max-width: 350px;
+    transition: var(--transition);
+    border: 1px solid #e1f0f7;
+}
+
+.team-card:hover {
+    transform: translateY(-5px);
+    background: #ffffff;
+    border-color: var(--primary-color);
+}
+
+.team-icon {
+    font-size: 3rem;
+    display: block;
+    margin-bottom: 1rem;
+}
+
+.team-card .role {
+    display: block;
+    color: var(--accent-pink);
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+/* Services Grid */
+.services-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+}
+
+.service-card {
+    background: var(--light-bg);
+    padding: 2rem 1.5rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    text-align: center;
+    transition: var(--transition);
+    border-top: 4px solid var(--accent-green);
+}
+
+/* Adding color variety to service cards */
+.service-card:nth-child(1) { border-top-color: var(--primary-color); }
+.service-card:nth-child(2) { border-top-color: var(--accent-pink); }
+.service-card:nth-child(3) { border-top-color: var(--accent-yellow); }
+.service-card:nth-child(4) { border-top-color: var(--accent-green); }
+.service-card:nth-child(5) { border-top-color: var(--primary-color); }
+
+.service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 25px -10px rgba(43, 159, 217, 0.2);
+}
+
+/* Forms */
+.form-container {
+    background: var(--section-bg);
+    padding: 2rem;
+    border-radius: var(--border-radius);
+    border: 1px solid #cce5f2;
+}
+
+.form-group {
+    margin-bottom: 1.2rem;
+    width: 100%;
+}
+
+.form-row {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+label {
+    display: block;
+    font-weight: 600;
+    color: var(--primary-color);
+    margin-bottom: 0.4rem;
+}
+
+input, select, textarea {
+    width: 100%;
+    padding: 0.9rem 1.2rem;
+    border: 1.5px solid #b3d9ed;
+    border-radius: 1rem;
+    font-family: inherit;
+    font-size: 1rem;
+    background: var(--light-bg);
+    transition: var(--transition);
+}
+
+input:focus, select:focus, textarea:focus {
+    outline: none;
+    border-color: var(--accent-pink);
+    box-shadow: 0 0 0 4px rgba(217, 26, 122, 0.15);
+}
+
+textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+.btn-submit {
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 1rem 2.5rem;
+    border-radius: 3rem;
+    font-size: 1.1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: var(--transition);
+    width: 100%;
+    margin-top: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.btn-submit:hover {
+    background: var(--accent-pink);
+    color: white;
+    transform: scale(1.02);
+}
+
+/* Contact Section */
+.location-card {
+    background: #eaf6fc;
+    padding: 2rem;
+    border-radius: var(--border-radius);
+    text-align: center;
+    margin-bottom: 2rem;
+    border: 1px solid #b3d9ed;
+}
+
+.location-card h3 {
+    color: var(--accent-pink);
+    margin-bottom: 1rem;
+}
+
+.location-icon {
+    font-size: 2.5rem;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+/* Footer */
+.main-footer {
+    background: var(--primary-color);
+    color: white;
+    padding: 3rem 0;
+    border-radius: 3rem 3rem 1rem 1rem;
+    text-align: center;
+    margin-top: 3rem;
+}
+
+.main-footer p {
+    color: #eaf6fc;
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+}
+
+.main-footer .copyright {
+    font-size: 0.9rem;
+    color: #b3d9ed;
+}
+
+/* =========================================
+   4. RESPONSIVE DESIGN (Media Queries)
+   ========================================= */
+
+/* Tablet Breakpoint (min-width: 600px) */
+@media (min-width: 600px) {
+    .header-container {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .hero-content {
+        flex-direction: row;
+        text-align: left;
+        justify-content: space-between;
+        padding: 0 2rem;
+    }
+
+    .hero-text {
+        flex: 1;
+    }
+
+    .hero-icon {
+        flex: 0 0 auto;
+    }
+
+    .form-row {
+        flex-direction: row;
+        gap: 1.5rem;
+    }
+
+    .form-group {
+        flex: 1;
+    }
+
+    .btn-submit {
+        width: auto;
+        min-width: 200px;
+    }
+}
+
+/* Desktop Breakpoint (min-width: 900px) */
+@media (min-width: 900px) {
+    .about-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .team-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .services-grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+
+    .hero-text h1 {
+        font-size: 3.5rem;
+    }
+
+    .main-nav {
+        gap: 2.5rem;
+    }
+
+    .contact-section .container {
+        display: grid;
+        grid-template-columns: 1fr 1.5fr;
+        gap: 3rem;
+        align-items: start;
+    }
+
+    .contact-section h2 {
+        grid-column: 1 / -1;
+    }
+
+    .location-card {
+        margin-bottom: 0;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+}
+
+
+.charts-grid {
+    display: flex;
+    justify-content: center; /* Centers the row */
+    align-items: flex-start;
+    gap: 1rem; /* Space between the pictures */
+    flex-wrap: wrap; /* Allows wrapping on very small phones */
+    margin-top: 1.5rem;
+}
+
+.chart-card {
+    background: var(--light-bg);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+    margin: 0;
+    border: 2px solid #e1f0f7; /* Matches your theme */
+    width: 160px; /* 👈 Forces them to be small */
+}
+
+.chart-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--primary-color);
+    box-shadow: 0 10px 20px rgba(43, 159, 217, 0.15);
+}
+
+.chart-link {
+    display: block;
+    cursor: zoom-in; 
+}
+
+.chart-card img {
+    width: 100%;
+    height: 200px; /* Keeps the small cards proportional */
+    object-fit: cover; 
+    object-position: top; 
+    display: block;
+    border-bottom: 1px solid #eee;
+}
+
+.chart-card figcaption {
+    padding: 0.75rem 0.5rem;
+    text-align: center;
+    font-weight: 700;
+    color: var(--primary-color);
+    font-size: 0.85rem;
+    background-color: var(--section-bg); 
+}
+
+/* Mobile adjustment so all 3 still fit side-by-side */
+@media (max-width: 500px) {
+    .chart-card {
+        width: 110px; /* Even smaller for phones */
+    }
+    .chart-card img {
+        height: 140px; 
+    }
+    .chart-card figcaption {
+        font-size: 0.7rem;
+        padding: 0.5rem 0.2rem;
+    }
+}
